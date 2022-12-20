@@ -25,7 +25,7 @@ You will also need to modify the connection string in the appsettings.json
 
 ### Executing program
 
-In Visual Studio, use the F5 tab to execute the API.
+In Visual Studio, use the F5 tab to execute the API on your machine.
 In Visual Studio Code, paste `dotnet run` in the terminal
 
 
