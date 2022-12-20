@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace FoodWatcherAPI.Models
 {
@@ -14,10 +15,10 @@ namespace FoodWatcherAPI.Models
 
         [DataType(DataType.Date)]
         public DateTime ExpirationDate { get; set; }
-
+      
         public Category Category { get; set; }
     }
-
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Category
     {
         Grain,
