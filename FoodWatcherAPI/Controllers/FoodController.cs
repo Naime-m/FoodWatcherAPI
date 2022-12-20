@@ -58,6 +58,19 @@ namespace FoodWatcherAPI.Controllers
             return NoContent();
         }
 
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var foodToDelete = await _context.Foods.FindAsync(id);
+            if (foodToDelete == null)
+                return NotFound();
+
+            _context.Foods.Remove(foodToDelete);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
 
     }
 }
