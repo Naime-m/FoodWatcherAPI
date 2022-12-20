@@ -42,7 +42,19 @@ namespace FoodWatcherAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = food.Id }, food);
         }
 
-  
+        [HttpPut("{id}")]
+
+        public async Task<IActionResult> Update(int id, Food food)
+        {
+            if (id != food.Id)
+                return BadRequest();
+
+            _context.Entry(food).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
 
     }
 }
