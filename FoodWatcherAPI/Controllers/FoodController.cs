@@ -42,7 +42,10 @@ namespace FoodWatcherAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = food.Id }, food);
         }
 
+
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
 
         public async Task<IActionResult> Update(int id, Food food)
         {
