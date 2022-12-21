@@ -36,6 +36,7 @@ namespace FoodWatcherAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create(Food food)
         {
+            food.Added = DateTime.Now;
             await _context.Foods.AddAsync(food);
             await _context.SaveChangesAsync();
 
