@@ -11,7 +11,7 @@ namespace FoodWatcherAPI.Models
         public string Description { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime Added { get; set; } = DateTime.Now;
+        public DateTime Added { get; set; } 
 
         [DataType(DataType.Date)]
         public DateTime ExpirationDate { get; set; }
